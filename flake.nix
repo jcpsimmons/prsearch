@@ -1,5 +1,5 @@
 {
-  description = "A simple flake to search GH PRs by title and body";
+  description = "prsearch - search for PRs in a repo";
 
   inputs = { flake-utils.url = "github:numtide/flake-utils"; };
 
