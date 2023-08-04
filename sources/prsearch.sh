@@ -10,9 +10,6 @@ while getopts ":a:q:r:" option; do
   q)
     TITLE_QUERY="$OPTARG"
     ;;
-  r)
-    REPO="$OPTARG"
-    ;;
   esac
 done
 
@@ -23,4 +20,3 @@ gh api -XGET search/issues -f q="$FULL_QUERY" --template \
 
 {{range .items}}{{printf "%v" .updated_at | timeago}}{{printf " (%v)" .user.login | autocolor "magenta"}}{{(printf " %v - " .title | autocolor "green+b+h")}}{{(printf "%v\n" .html_url | autocolor "cyan+u")}}{{end}}
 '
-
