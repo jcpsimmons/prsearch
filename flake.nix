@@ -41,10 +41,6 @@
           '';
           default = prsearch;
         };
-        # apps = rec {
-        #   hello = flake-utils.lib.mkApp { drv = self.packages.${system}.hello; };
-        #   default = hello;
-        # };
       }
     );
 }
