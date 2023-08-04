@@ -23,11 +23,13 @@
               q)
                 TITLE_QUERY="$OPTARG"
                 ;;
-              r)
-                REPO="$OPTARG"
-                ;;
               esac
             done
+
+            if [ -z "$AUTHOR" ] && [ -z "$TITLE_QUERY" ]; then
+              echo "-a (author) and -q (text query) flags are empty - please provide one or both"
+              exit 1
+            fi
 
             FULL_QUERY="$AUTHOR is:pr sort:updated $TITLE_QUERY in:title"
 
